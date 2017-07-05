@@ -14,5 +14,11 @@ describe ('Sum', function() {
       expect(sum()).to.equal(0);
       assert.equal(sum(),0);
     });
-    
+
+    it('Should return ERROR if anything but integers are passed in.', function(){
+      expect(sum(1,2,3)).to.equal(6);
+      expect(sum([123,4])).to.equal(error);
+      expect (sum('a',[],1)).to.equal(error);
+    })
+
 });
